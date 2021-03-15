@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap');
+
+:root {
+    --primary: #f0e9aa;
+    --secondary: #9b2914;
+    --light: #ffffff;
+    --dark: #000000;
+    --intermiary: #474747;
+
+    --spacing: 8px;
+    --spacing-2: calc(var(--spacing) * 2);
+    --spacing-3: calc(var(--spacing) * 3);;
+
+    --font-size-text: 16pt;
+    --font-size-subtitle: calc(var(--font-size-text) * 1.2);
+    --font-size-title: calc(var(--font-size-text) * 1.4);
+
+    --font-family-title: 'Lobster', cursive;
+    --font-family-text: 'Roboto', sans-serif;
+
+    --navbar-height: 60px;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin:0;
+    padding-top: var(--navbar-height);
+    font-family: var(--font-family-text);
+}
+
+h1, h2, h3 {
+    font-family: var(--font-family-title);
+}
+
+nav {
+    display: flex;
+    position: fixed;
+    top:0;
+    width: 100vw;
+    height: var(--navbar-height);
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary);
+    padding: var(--spacing);
+    color: var(--secondary);
+}
+
+nav a {
+    color: var(--secondary);
+    text-decoration: none;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+nav .nav-title {
+    font-size: 16pt;
+}
+
+.burger {
+    display: none;
+}
+
+.items:target {
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    position: fixed;
+
+    font-size: 16pt;
+    background-color: var(--primary);
+    opacity:0.95;
+    width: 100vw;
+    height: 100vh;
+    top:0;
+    left:0;
+}
+
+.close {
+    position: absolute;
+    top: var(--spacing);
+    right: var(--spacing);
+}
+@media screen and (max-width: 600px) {
+    .burger {
+        display: block;
+    }
+
+    .items {
+        display: none;
+    }
+}
